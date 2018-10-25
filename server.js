@@ -2,13 +2,13 @@ const express = require('express');
 const vhost = require('vhost');
 
 
-const classic = require('./dist/classic/server');
+// const classic = require('./dist/classic/server');
 const crimson = require('./dist/crimson/server');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(vhost('classic2.stgfishry.com', classic));
+// app.use(vhost('classic2.stgfishry.com', classic));
 app.use(vhost('crimson2.stgfishry.com', crimson));
 
 let server = app.listen(PORT, () => {

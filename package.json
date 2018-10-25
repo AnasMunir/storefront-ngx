@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "npm install && npm run build_lib && npm run build-classic:ssr",
+    "build": "npm run build_lib && npm run build-classic:ssr",
     "deploy": "npm run-script build && npm start",
     "test": "ng test",
     "lint": "ng lint",

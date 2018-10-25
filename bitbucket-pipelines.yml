@@ -12,4 +12,5 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
-          - npm test
+          - npm run deploy
+          - git push https://$AZURE_LOGIN:$AZURE_PASSWORD@fishry-storefront-stg-ngx.scm.azurewebsites.net/fishry-storefront-stg-ngx.git master
