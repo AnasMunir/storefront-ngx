@@ -8,8 +8,8 @@ const crimson = require('./dist/crimson/server');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(vhost('classic.atequator.com', classic));
-app.use(vhost('crimson.atequator.com', crimson));
+app.use(vhost('classic2.stgfishry.com', classic));
+app.use(vhost('crimson2.stgfishry.com', crimson));
 
 let server = app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
