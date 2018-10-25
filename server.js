@@ -1,15 +1,22 @@
 const express = require('express');
 const vhost = require('vhost');
 
-
+let crimson = null;
 // const classic = require('./dist/classic/server');
-const crimson = require('./dist/crimson/server');
+try {
+  const crimsonApp = require('./dist/crimson/server');
+  crimson = crimsonApp
+} catch (error) {
+  console.error('crimson dist error', error);
+}
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
 // app.use(vhost('classic2.stgfishry.com', classic));
-app.use(vhost('crimson2.stgfishry.com', crimson));
+if (crimson) {
+  app.use(vhost('crimson2.stgfishry.com', crimson));
+}
 
 let server = app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
