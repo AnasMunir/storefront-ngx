@@ -1,0 +1,128 @@
+<div class="sale-strip" *ngIf="themeSettings.saletag_Show">
+  <p>
+    <a *ngIf="themeSettings.saletag_url" [routerLink]="[themeSettings.saletag_url]" class="sale-url">{{themeSettings.saletag}}
+    </a>
+    <a *ngIf="!themeSettings.saletag_url" class="sale-url">{{themeSettings.saletag}} </a>
+  </p>
+</div>
+<header>
+  <!-- Mobile Header -->
+  <div class="mobileVersion">
+    <ng-container [ngTemplateOutlet]="mobileHeader"></ng-container>
+  </div>
+  <!-- // mobile header -->
+
+  <!-- *ngIf="!(screenSizeService.isSmallScreen | async)" -->
+  <!-- Desktop Header -->
+  <div class="header-desktop desktopVersion">
+    <div>
+      <ng-container [ngTemplateOutlet]="websiteHeader"></ng-container>
+    </div>
+  </div>
+  <!-- // desktop header -->
+
+  <ng-template #mobileHeader>
+    <div class="mobile-header">
+      <div class="row ">
+        <div class="col">
+          <a class="float-left mobile-bars" (click)="toggleNav('start')">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <div class="col-6 text-center">
+          <a class="h3 logo-mobile" [routerLink]="['/']">
+            <fishry-image [enableLazyLoad]="false" *ngIf="themeSettings?.logo_img_mobile" [src]="themeSettings?.logo_img_mobile"
+              [route]="'themes'" [size]="''">
+            </fishry-image>
+          </a>
+        </div>
+        <div class="col text-right">
+          <ul class="list-inline float-right">
+            <!-- <li class="list-inline-item" >
+                <a *ngIf="!searchShow" (click)="toggleSearch()" class="mobile-cart" >
+                  <i class="fa fa-search"></i>
+                </a>
+            </li> -->
+            <li class="list-inline-item" (click)="toggleNav('end')">
+              <a class="mobile-cart">
+                <i class="fa fa-shopping-bag"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ng-container [ngTemplateOutlet]="search"></ng-container>
+    </div>
+  </ng-template>
+  <!-- // mobile header -->
+
+  <ng-template #websiteHeader>
+    <div class="row justify-content-between">
+      <div class="col-4">
+        <div class="currency-converter" *ngIf="themeSettings?.cc_show">
+          <!-- <app-crrency-converter (currencyChange)="selectCurrency($event)"></app-crrency-converter> -->
+        </div>
+        <a *ngIf="!searchShow" (click)="toggleSearch()" class="pl-2">
+          <i class="fa fa-search"></i>
+          <span>Search</span>
+        </a>
+        <ng-container [ngTemplateOutlet]="search"></ng-container>
+
+      </div>
+      <div class="col-6 text-right">
+        <ul class="list-inline mb-0">
+
+          <a [routerLink]="['/account/login']">
+            <i class="fa fa-user"></i>
+            <span>My Account </span> &nbsp; &nbsp;
+          </a>
+          <!-- <a [routerLink]="['/account/profile']" >
+            <i class="fa fa-user"></i>
+            <span>Welcome, Bro &nbsp;&nbsp;</span>
+          </a>
+          <a title="Logout">Logout</a> &nbsp;&nbsp; -->
+          <a (click)="toggleNav('end')">
+            <i class="fa fa-shopping-bag"></i>
+            <span style="color: #747474;">My Cart</span>
+
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div class="row navigation-web">
+      <div class="col-sm-5 text-center">
+        <!-- <app-nav *ngIf="handler" [handler]="handler['main-menu']"></app-nav> -->
+        <fishry-nav [menuItems]="mainMenu"></fishry-nav>
+      </div>
+      <div class="col-sm-2 logo-web text-center">
+        <a [routerLink]="['/']">
+          <fishry-image [enableLazyLoad]="false" *ngIf="themeSettings.logo_img" [src]="themeSettings.logo_img" [route]="'themes'"
+            [size]="''">
+          </fishry-image>
+        </a>
+      </div>
+      <div class="col-sm-5 text-center">
+        <!-- <app-nav *ngIf="handler" [handler]="handler['main-menu-sec']"></app-nav> -->
+        <fishry-nav [menuItems]="mainMenuSec"></fishry-nav>
+      </div>
+    </div>
+  </ng-template>
+  <!-- Header Website -->
+</header>
+
+
+<ng-template #search>
+  <!-- SEARCH -->
+  <div class="header-search">
+    <div *ngIf="searchShow" class="header-search__input-container">
+      <div class="input-group">
+        <input #searchInput type="text" (keyup.enter)="onEnter(searchInput.value)" class="form-control" placeholder="Search"
+          aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-default btn-search" (click)="onEnter(searchInput.value)" type="button"><i class="fa fa-search"></i></button>
+          <button class="btn btn-default btn-close" (click)="searchShow = false" type="button">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

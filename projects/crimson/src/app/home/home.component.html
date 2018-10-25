@@ -1,0 +1,112 @@
+<div class="homePage">
+  <!-- Slider For Mobile  -->
+  <div class="main-banners">
+    <fishry-carousel class="desktopVersion" [banner]="desktopBanners()"></fishry-carousel>
+    <fishry-carousel class="mobileVersion" [banner]="mobileBanners()"></fishry-carousel>
+    <br>
+    <!-- <img class="img-fluid mb-element1 d-none d-sm-block d-md-block" src="assets/images/main-bar-discover.png"
+		 alt="main slider image"> -->
+    <a class="mb-element2 d-none d-sm-block d-md-block" [routerLink]="themeSettings?.mainbanner_link">Discover</a>
+  </div>
+  <div class="spacer d-none d-sm-block d-md-block"></div>
+
+  <!-- All Collection Banner-->
+  <div class="spacer d-none d-sm-block d-md-block"></div>
+
+  <div class="row home-section secondary-detail">
+    <div class="col-12 col-sm-6  secondary-detail-wrapper">
+      <div class="secondary-detail">
+        <h4>{{themeSettings?.featured_img1_h1}} </h4>
+        <p class="s-detail-des">
+          {{themeSettings?.featured_img1_des}}
+        </p>
+        <a class="sb-button" [routerLink]="themeSettings.featured_link1">Discover</a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 p-0">
+      <a class="pull-left img-wrapper" [routerLink]="themeSettings.featured_img1_link">
+        <fishry-image [src]="themeSettings.featured_img1" [route]="'themes'" [enableLazyLoad]="false">
+        </fishry-image>
+      </a>
+    </div>
+  </div>
+
+  <div class="row home-section secondary-detail">
+    <div class="col-12 col-sm-6 p-0 middle-images">
+      <a class="pull-right img-wrapper" [routerLink]="themeSettings.featured_img2_link">
+        <fishry-image [src]="themeSettings.featured_img2" [route]="'themes'" [size]="''" [enableLazyLoad]="false">
+        </fishry-image>
+      </a>
+      <a style="margin-right:3px;" class="pull-right img-wrapper d-none d-sm-block d-md-block" [routerLink]="themeSettings.featured_img2a_link">
+        <fishry-image [src]="themeSettings.featured_img2a" [route]="'themes'" [size]="''" [enableLazyLoad]="false">
+        </fishry-image>
+      </a>
+    </div>
+    <div class="col-12 col-sm-6 text-center secondary-detail-wrapper p-0">
+      <div class="secondary-detail ">
+        <h4>{{themeSettings?.featured_img2_h1}} </h4>
+
+        <p class="s-detail-des">
+          {{themeSettings?.featured_img2_des}}
+        </p>
+        <a class="sb-button" [routerLink]="themeSettings?.featured_link2">Discover</a>
+      </div>
+    </div>
+  </div>
+  <div class="row home-section secondary-detail">
+    <div class="col-12 col-sm-6 secondary-detail-wrapper">
+      <div class="secondary-detail">
+        <h4>{{themeSettings?.featured_img3_h1}} </h4>
+
+        <p class="s-detail-des">
+          {{themeSettings?.featured_img3_des}}
+        </p>
+        <a class="sb-button" [routerLink]="themeSettings?.featured_link3">Discover</a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 p-0">
+      <a class="pull-left img-wrapper" [routerLink]="themeSettings?.featured_img3_linka" class="pull-left img-wrapper">
+        <fishry-image [src]="themeSettings?.featured_img3" [route]="'themes'" [size]="''" [enableLazyLoad]="false">
+        </fishry-image>
+      </a>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <!-- Look Book -->
+  <div class="row lookbook-section">
+    <div class="col-12 col-sm-4 lookbook-wrapper">
+      <div class="lookbook">
+        <div class="lookbook-inner">
+          <p class="s-detail-des">
+            {{themeSettings?.lookbook_des}}
+          </p>
+          <a class="sb-button" (click)="openLink(themeSettings?.lookbook_link1)">Explore </a>
+          <!-- [routerLink]="themeSettings?.lookbook_link1" -->
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-8 p-0">
+      <a (click)="openLink(themeSettings?.lookbook_link1)">
+        <fishry-carousel class="desktopVersion" *ngIf="themeSettings?.secondaryBanner" [banner]="secondaryDesktopBanners()"></fishry-carousel>
+        <fishry-carousel class="mobileVersion" *ngIf="themeSettings?.secondaryBanner" [banner]="secondaryMobileBanners()"></fishry-carousel>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- NewsLetter -->
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class=" row justify-content-md-center">
+    <div class="newsletter col-12">
+      <div class="col-md-auto">
+
+        <h2 class="text-uppercase"> Join our newsletter</h2>
+        <div class="spacer"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>

@@ -1,3 +1,21 @@
-<p>
-  carousel works!
-</p>
+<ngu-carousel #myCarousel [inputs]="carouselOne" [dataSource]="banner">
+  <!-- <ngu-item *ngFor="let banner of desktopBanner; let i = index" (click)="routeTo(banner.link)">
+    <img [src]="banner.image" alt="" class="img-fluid">
+  </ngu-item>
+  <button NguCarouselPrev class='leftRs'>&lt;</button>
+  <button NguCarouselNext class='rightRs'>&gt;</button> -->
+
+
+  <ngu-tile *nguCarouselDef="let item; let j = index">
+    <!-- <div class="tile" [style.background]="'url(' + item + ')'">
+      <h1>{{j}}</h1>
+    </div> -->
+    <img [src]="item.image" alt="" class="img-fluid">
+  </ngu-tile>
+  <button NguCarouselPrev class="leftRs">&lt;</button>
+  <button NguCarouselNext class="rightRs">&gt;</button>
+  <!-- <ul class="myPoint" NguCarouselPoint>
+    <li *ngFor="let j of myCarousel.pointNumbers; let j = index" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"
+      [style.background]="'url(' + images[j] + ')'"></li>
+  </ul> -->
+</ngu-carousel>

@@ -1,3 +1,19 @@
-<p>
-  nav works!
-</p>
+<div class="navigation-block" class="row">
+  <div class="d-inline-block" *ngFor="let item of menuItems">
+    <button *ngIf="listExists(item)" mat-button [matMenuTriggerFor]="subMenu1">
+      {{item.name}}
+    </button>
+    <button *ngIf="listEmpty(item)" mat-button>
+      {{item.name}}
+    </button>
+    <mat-menu #subMenu1="matMenu">
+      <div *ngFor="let list of item.list">
+        <button mat-menu-item *ngIf="listEmpty(list)">{{list.name}}</button>
+        <button *ngIf="listExists(list)" mat-menu-item [matMenuTriggerFor]="subMenu">{{list.name}}</button>
+        <mat-menu #subMenu="matMenu">
+          <button mat-menu-item *ngFor="let list of list.list">{{list.name}}</button>
+        </mat-menu>
+      </div>
+    </mat-menu>
+  </div>
+</div>

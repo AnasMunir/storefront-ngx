@@ -299,7 +299,7 @@
               "projects/crimson/src/assets"
             ],
             "styles": [
-              "projects/crimson/src/styles.scss"
+              "projects/crimson/src/crimson.scss"
             ],
             "scripts": []
           },
@@ -355,7 +355,7 @@
             "tsConfig": "projects/crimson/tsconfig.spec.json",
             "karmaConfig": "projects/crimson/karma.conf.js",
             "styles": [
-              "projects/crimson/src/styles.scss"
+              "projects/crimson/src/crimson.scss"
             ],
             "scripts": [],
             "assets": [
@@ -429,6 +429,11 @@
       "sourceRoot": "projects/fishry/src",
       "projectType": "library",
       "prefix": "fishry",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

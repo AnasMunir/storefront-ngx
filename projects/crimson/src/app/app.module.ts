@@ -6,17 +6,26 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 // import { FishryModule } from 'projects/fishry/src/public_api';
 import { FishryModule } from 'fishry';
+import { MatSidenavModule } from '@angular/material';
+import { LAYOUTCOMPONENTS } from './layout';
+import { HomeComponent } from './home/home.component';
 
+const MATCOMPONENTS: any[] = [
+	MatSidenavModule
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+		...LAYOUTCOMPONENTS
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
     FishryModule.forRoot('crimson.stgfishry.com'),
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    ...MATCOMPONENTS
   ],
   providers: [],
   bootstrap: [AppComponent]
