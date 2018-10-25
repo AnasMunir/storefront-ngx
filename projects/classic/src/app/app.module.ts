@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { FishryModule } from 'fishry';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
+    FishryModule.forRoot('classic.stgfishry.com'),
     AppRoutingModule,
     HttpModule
   ],

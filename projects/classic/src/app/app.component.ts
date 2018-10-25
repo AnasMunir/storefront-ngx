@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { map, share, catchError, tap } from 'rxjs/operators';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { FishryService } from 'fishry';
 
 const STATE_KEY = makeStateKey('appState');
 
@@ -14,7 +15,7 @@ const STATE_KEY = makeStateKey('appState');
 export class AppComponent {
   title = 'classic';
 
-  constructor(private http: Http, private state: TransferState) {
+  /* constructor(private http: Http, private state: TransferState) {
     let resp = this.state.get(STATE_KEY, null as any);
     if (resp) {
       console.log('resp already set', resp);
@@ -32,5 +33,12 @@ export class AppComponent {
       map(resp => resp.json().data),
       share()
     );
+  } */
+  constructor(public fishryService: FishryService) {
+
+  }
+
+  ngOnInit() {
+
   }
 }

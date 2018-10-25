@@ -14,7 +14,7 @@ app.use(vhost('crimson.atequator.com', crimson));
 let server = app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
 });
-server.on('connection', (socket) => {
+/* server.on('connection', (socket) => {
   console.log('address object', socket.address());
   console.log('remote address', socket.remoteAddress);
-});
+}); */
