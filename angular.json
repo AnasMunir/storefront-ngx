@@ -423,6 +423,41 @@
           }
         }
       }
+    },
+    "fishry": {
+      "root": "projects/fishry",
+      "sourceRoot": "projects/fishry/src",
+      "projectType": "library",
+      "prefix": "fishry",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/fishry/tsconfig.lib.json",
+            "project": "projects/fishry/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fishry/src/test.ts",
+            "tsConfig": "projects/fishry/tsconfig.spec.json",
+            "karmaConfig": "projects/fishry/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fishry/tsconfig.lib.json",
+              "projects/fishry/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "fishry-storefront-ngx"
