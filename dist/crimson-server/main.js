@@ -469,13 +469,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = __webpack_require__(/*! ./app.component.scss.shim.ngstyle */ "./src/app/app.component.scss.shim.ngstyle.js");
 var i1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var i2 = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-var i3 = __webpack_require__(/*! fishry */ "fishry");
 var styles_AppComponent = [i0.styles];
 var RenderType_AppComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_AppComponent, data: {} });
 exports.RenderType_AppComponent = RenderType_AppComponent;
 function View_AppComponent_0(_l) { return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { sidenav: 0 }), (_l()(), i1.ɵeld(1, 0, null, null, 1, "h1", [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["Hello world from crimson"]))], null, null); }
 exports.View_AppComponent_0 = View_AppComponent_0;
-function View_AppComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "fishry-root", [], null, null, null, View_AppComponent_0, RenderType_AppComponent)), i1.ɵdid(1, 114688, null, 0, i2.AppComponent, [i3.FishryService, i3.FishryStore], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_AppComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "fishry-root", [], null, null, null, View_AppComponent_0, RenderType_AppComponent)), i1.ɵdid(1, 114688, null, 0, i2.AppComponent, [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_AppComponent_Host_0 = View_AppComponent_Host_0;
 var AppComponentNgFactory = i1.ɵccf("fishry-root", i2.AppComponent, View_AppComponent_Host_0, {}, {}, []);
 exports.AppComponentNgFactory = AppComponentNgFactory;
@@ -515,13 +514,13 @@ exports.styles = styles;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fishry_1 = __webpack_require__(/*! fishry */ "fishry");
 var material_1 = __webpack_require__(/*! @angular/material */ "@angular/material");
 // import { FishryService } from 'projects/fishry/src/public_api';
 var AppComponent = /** @class */ (function () {
-    function AppComponent(fishryService, store) {
-        this.fishryService = fishryService;
-        this.store = store;
+    function AppComponent(
+    /* public fishryService: FishryService,
+    public store: FishryStore */
+    ) {
         this.position = 'end';
     }
     AppComponent.prototype.ngOnInit = function () {
