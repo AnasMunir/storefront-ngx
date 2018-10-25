@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run deploy && node server.js",
     "build": "npm run build_lib && npm run build-crimson:ssr",
     "deploy": "npm run-script build",
     "test": "ng test",
