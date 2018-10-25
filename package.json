@@ -35,6 +35,7 @@
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    "fishry": "file:dist/fishry/fishry-0.0.1.tgz",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",
     "ts-loader": "^5.2.2",
