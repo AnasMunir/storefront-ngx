@@ -22,7 +22,7 @@ const MATCOMPONENTS: any[] = [
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
-    FishryModule.forRoot('crimson.stgfishry.com'),
+    FishryModule.forRoot('crimson2.stgfishry.com'),
     AppRoutingModule,
     HttpModule,
     ...MATCOMPONENTS
