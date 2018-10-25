@@ -467,8 +467,6 @@ SOFTWARE.
 
 @angular/material/menu
 
-@angular/material/sidenav
-
 zone.js
 MIT
 The MIT License
