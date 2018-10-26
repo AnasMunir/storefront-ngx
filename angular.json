@@ -147,7 +147,8 @@
             "tsConfig": "projects/classic/tsconfig.app.json",
             "assets": [
               "projects/classic/src/favicon.ico",
-              "projects/classic/src/assets"
+              "projects/classic/src/assets",
+              "projects/classic/src/web.config"
             ],
             "styles": [
               "projects/classic/src/styles.scss"
@@ -211,7 +212,8 @@
             "scripts": [],
             "assets": [
               "projects/classic/src/favicon.ico",
-              "projects/classic/src/assets"
+              "projects/classic/src/assets",
+              "projects/classic/src/web.config"
             ]
           }
         },
