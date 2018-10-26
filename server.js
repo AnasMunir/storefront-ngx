@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const vhost = require('vhost');
 
 let crimson = null;
@@ -18,7 +18,7 @@ try {
 }
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080; */
 
 // if (crimson) {
 //   app.use(vhost('crimson2.stgfishry.com', crimson));
