@@ -13,8 +13,8 @@ export class AppComponent {
   position: string = 'end';
   @ViewChild(MatSidenav) sidenav: MatSidenav;
   constructor(
-    /* public fishryService: FishryService,
-    public store: FishryStore */
+    public fishryService: FishryService,
+    public store: FishryStore
     ) {
 
   }
