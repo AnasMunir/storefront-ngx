@@ -296,7 +296,8 @@
             "tsConfig": "projects/crimson/tsconfig.app.json",
             "assets": [
               "projects/crimson/src/favicon.ico",
-              "projects/crimson/src/assets"
+              "projects/crimson/src/assets",
+              "projects/crimson/src/web.config"
             ],
             "styles": [
               "projects/crimson/src/crimson.scss"
@@ -360,7 +361,8 @@
             "scripts": [],
             "assets": [
               "projects/crimson/src/favicon.ico",
-              "projects/crimson/src/assets"
+              "projects/crimson/src/assets",
+              "projects/crimson/src/web.config"
             ]
           }
         },

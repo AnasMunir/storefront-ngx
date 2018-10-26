@@ -54,8 +54,8 @@ const crimsonApp = app.get('*', (req, res) => {
 
 console.log('crimsonApp', crimsonApp);
 // Start up the Node server
-/* app.listen(PORT, () => {
+app.listen(PORT, () => {
 	console.log(`Node server listening on http://localhost:${PORT}`);
-}); */
+});
 
-module.exports = crimsonApp;
+// module.exports = crimsonApp;
