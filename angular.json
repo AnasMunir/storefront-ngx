@@ -147,8 +147,7 @@
             "tsConfig": "projects/classic/tsconfig.app.json",
             "assets": [
               "projects/classic/src/favicon.ico",
-              "projects/classic/src/assets",
-              "projects/classic/src/web.config"
+              "projects/classic/src/assets"
             ],
             "styles": [
               "projects/classic/src/styles.scss"
@@ -212,8 +211,7 @@
             "scripts": [],
             "assets": [
               "projects/classic/src/favicon.ico",
-              "projects/classic/src/assets",
-              "projects/classic/src/web.config"
+              "projects/classic/src/assets"
             ]
           }
         },
@@ -298,8 +296,7 @@
             "tsConfig": "projects/crimson/tsconfig.app.json",
             "assets": [
               "projects/crimson/src/favicon.ico",
-              "projects/crimson/src/assets",
-              "projects/crimson/src/web.config"
+              "projects/crimson/src/assets"
             ],
             "styles": [
               "projects/crimson/src/crimson.scss"
@@ -363,8 +360,7 @@
             "scripts": [],
             "assets": [
               "projects/crimson/src/favicon.ico",
-              "projects/crimson/src/assets",
-              "projects/crimson/src/web.config"
+              "projects/crimson/src/assets"
             ]
           }
         },
