@@ -1,5 +1,6 @@
-<h1>Hello world from crimson</h1>
-<!-- <mat-sidenav-container>
+<h1 *ngIf="!store.state.isLoaded">Hello world from crimson</h1>
+
+<mat-sidenav-container *ngIf="store.state.isLoaded">
   <mat-sidenav #sidenav>
     <p>Wattup</p>
   </mat-sidenav>
@@ -14,4 +15,4 @@
       <fishry-footer></fishry-footer>
     </div>
   </mat-sidenav-content>
-</mat-sidenav-container> -->
+</mat-sidenav-container>

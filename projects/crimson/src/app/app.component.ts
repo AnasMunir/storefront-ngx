@@ -16,7 +16,6 @@ export class AppComponent {
     public fishryService: FishryService,
     public store: FishryStore
     ) {
-
   }
 
   ngOnInit() {
