@@ -9,6 +9,8 @@ import { IGeneralSettings, AppStateModel } from "./store/models/fishry.model";
 import { isPlatformBrowser } from '@angular/common';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 
+import * as Redis from 'redis';
+
 const STATE_KEY = makeStateKey('appState');
 @Injectable({
   providedIn: 'root'
@@ -50,7 +52,7 @@ export class FishryService {
         domain: this.appState.domain,
         isPlatformBrowser: false
       }));
-      console.log('the state',this.store.state);     
+      console.log('the state', this.store.state);
     }
   }
 

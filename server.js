@@ -1,9 +1,21 @@
 const express = require('express');
 const vhost = require('vhost');
+const Redis = require('redis');
+
+// Initializing Redis
+const redisClient = Redis.createClient(6380, process.env.redis_server || 'fishry-storefront-apis.redis.cache.windows.net', {
+  auth_pass: process.env.redis_auth || '24YEGZSbNo47pM2VVB26/psS2lnsFVI8RxSf5DIwT+c=',
+  tls: {
+    servername: process.env.redis_server || 'fishry-storefront-apis.redis.cache.windows.net'
+  }
+});
+
+redisClient.on('connect', () => {
+  console.log('Redis connected');
+});
 
 let crimson = null;
 let classic = null;
-// const classic = require('./dist/classic/server');
 try {
   const crimsonApp = require('./dist/crimson/server');
   crimson = crimsonApp
@@ -20,8 +32,18 @@ try {
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.get('/get-store-info', (req, res) => {
+  console.time('redisSpeed');
+  console.log('req.query -->', req.query.domain);
+  redisClient.get(req.query.domain, (err, value) => {
+    res.send(value);
+    console.timeEnd('redisSpeed');
+  });
+});
+
 if (crimson) {
   app.use(vhost('crimson2.stgfishry.com', crimson));
+  app.use(vhost('crimson.atequator.com', crimson));
 }
 if (classic) {
   app.use(vhost('classic2.stgfishry.com', classic));

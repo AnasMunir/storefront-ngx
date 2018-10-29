@@ -8,6 +8,7 @@ import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+import * as Redis from 'redis';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -54,8 +55,8 @@ const crimsonApp = app.get('*', (req, res) => {
 
 console.log('crimsonApp', crimsonApp);
 // Start up the Node server
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
 	console.log(`Node server listening on http://localhost:${PORT}`);
-});
+}); */
 
-// module.exports = crimsonApp;
+module.exports = crimsonApp;
