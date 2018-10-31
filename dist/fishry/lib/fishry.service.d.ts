@@ -9,6 +9,7 @@ export declare class FishryService {
     private platformId;
     private state;
     appState: AppStateModel;
+    private redisUrl;
     constructor(domain: string, http: Http, store: FishryStore, platformId: Object, state: TransferState);
     initDomain(domain: string): void;
     initGeneralSettings(domain: string): import("rxjs/internal/Observable").Observable<IGeneralSettings>;

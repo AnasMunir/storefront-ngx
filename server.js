@@ -35,8 +35,9 @@ const PORT = process.env.PORT || 8080;
 
 app.get('/get-store-info', (req, res) => {
   console.time('redisSpeed');
+  console.log('req.query -->', req.query.domain);
   redisClient.get(req.query.domain, (err, value) => {
-    res.send(value);
+    // res.send(value);
     console.timeEnd('redisSpeed');
   });
 });

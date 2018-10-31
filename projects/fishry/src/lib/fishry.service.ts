@@ -28,7 +28,7 @@ export class FishryService {
     isPlatformBrowser: false
   };
 
-  private redisUrl: string = 'https://fishry-storefront-stg.azurewebsites.net';
+  private redisUrl: string = 'https://fishry-storefront-stg-ngx.azurewebsites.net';
 
   constructor(
     @Inject('domain') public domain: string,
