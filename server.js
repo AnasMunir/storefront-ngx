@@ -16,6 +16,7 @@ redisClient.on('connect', () => {
 
 let crimson = null;
 let classic = null;
+
 try {
   const crimsonApp = require('./dist/crimson/server');
   crimson = crimsonApp
@@ -34,14 +35,33 @@ const PORT = process.env.PORT || 8080;
 
 app.get('/get-store-info', (req, res) => {
   console.time('redisSpeed');
-  console.log('req.query -->', req.query.domain);
   redisClient.get(req.query.domain, (err, value) => {
     res.send(value);
     console.timeEnd('redisSpeed');
   });
 });
+/* app.get('*', (req, res) => {
+  // console.time('redisSpeed');
+  // let domain = req.hostname;
+  // domain = domain.substr(0, domain.indexOf('.'));
+  // // res.send(domain);
+  // let app = null;
+  // const app2 = require(`./dist/${domain}/server`);
+  // console.log('app2', app);
+  // app = app2;
+  // let dist = `${domain}.stgfishry.com`;
+  // console.log('dist => ', dist);
+  if (crimson) {
+    console.log('app being served ->', crimson);
+    // app.use(vhost('crimson2.stgfishry.com', crimson));
+    app.use(vhost('crimson.atequator.com', crimson));
+  } else {
+    console.log('crap')
+  }
+}); */
 
 if (crimson) {
+  console.log('app', crimson);
   app.use(vhost('crimson2.stgfishry.com', crimson));
   app.use(vhost('crimson.atequator.com', crimson));
 }

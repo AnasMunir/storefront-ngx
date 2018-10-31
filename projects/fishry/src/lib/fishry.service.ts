@@ -26,7 +26,9 @@ export class FishryService {
     storeID: null,
     domain: null,
     isPlatformBrowser: false
-  }
+  };
+
+  private redisUrl: string = 'https://fishry-storefront-stg.azurewebsites.net';
 
   constructor(
     @Inject('domain') public domain: string,
@@ -117,7 +119,7 @@ export class FishryService {
   }
 
   private fetchGeneralSettings(appDomain?: string) {
-    let response = this.http.get(`https://fishry-storefront-apis-stg.azurewebsites.net/get-store-info?domain=${appDomain}`);
+    let response = this.http.get(`${this.redisUrl}/get-store-info?domain=${appDomain}`);
     return response.pipe(
       map(resp => resp.json().data),
       share()
